@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="icon.png">
+<title>Intentt — Help &amp; FAQ</title>
+<style>
+  body { font-family: -apple-system, "Segoe UI", Roboto, sans-serif; max-width: 780px;
+         margin: 0 auto; padding: 32px 20px 64px; line-height: 1.65; color: #222; }
+  h1 { font-size: 1.7em; margin-bottom: .2em; }
+  h2 { font-size: 1.25em; margin-top: 2em; border-bottom: 1px solid #e3e3e3; padding-bottom: 6px; }
+  h3 { font-size: 1.02em; margin-top: 1.5em; }
+  .sub { color: #666; margin-top: 0; }
+  .toc a { display: block; padding: 2px 0; }
+  .tip { background: #f1f6fb; border-left: 4px solid #00658F; padding: 10px 14px; border-radius: 4px; }
+  code { background: #f2f2f2; padding: 1px 5px; border-radius: 4px; }
+  table.sym { border-collapse: collapse; width: 100%; margin: 10px 0; }
+  table.sym th, table.sym td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #e6e6e6;
+                               vertical-align: top; }
+  table.sym th { background: #f5f7f9; }
+  table.sym td.s { font-size: 1.25em; text-align: center; width: 62px; font-weight: 600; }
+  a { color: #00658F; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #16181c; color: #e6e6e6; }
+    h2 { border-color: #2e3238; } .sub { color: #9aa0a6; }
+    .tip { background: #1d2733; border-color: #8DCDFF; }
+    code { background: #2a2d33; } a { color: #8DCDFF; }
+    table.sym th { background: #22262c; } table.sym th, table.sym td { border-color: #2e3238; }
+  }
+</style>
+</head>
+<body>
+<h1>Intentt — Help &amp; FAQ</h1>
+<p class="sub">Everything you need to get the most out of Intentt.</p>
+
+<div class="toc">
+  <a href="#basics">Getting started</a>
+  <a href="#habits">Habits &amp; streaks</a>
+  <a href="#tasks">Tasks</a>
+  <a href="#focus">Focus timer</a>
+  <a href="#reminders">Reminders &amp; notifications (troubleshooting)</a>
+  <a href="#pro">Intentt Pro</a>
+  <a href="#data">Your data, backup &amp; privacy</a>
+  <a href="#contact">Still stuck?</a>
+</div>
+
+<h2 id="basics">Getting started</h2>
+
+<h3>What is Intentt?</h3>
+<p>Intentt is an all-in-one habit tracker, task manager and focus timer. It's built around a simple
+idea: small intentions, repeated daily, become who you are.</p>
+
+<h3>Do I need an account?</h3>
+<p>No. There is no sign-up, no login, and no cloud. Open the app and start — everything is stored
+on your device.</p>
+
+<h3>Does it work offline?</h3>
+<p>Yes, completely. Intentt never needs an internet connection to work. (The only time it goes
+online is for a Google Play purchase or a Play Store rating, both handled by Google.)</p>
+
+<h2 id="habits">Habits &amp; streaks</h2>
+
+<h3>What habit schedules can I create?</h3>
+<p>Daily, weekly, monthly, yearly, or fully custom — for example "3 times a week", "2 times a month",
+or "every 10 days". Pick whatever matches how you actually live.</p>
+
+<h3>What is a "measurable" habit?</h3>
+<p>A habit tracked with a number instead of a simple tick — 20 minutes of meditation, 8 glasses of
+water, 30 pages read. Set a target and choose whether you want to hit <em>at least</em> that
+number (e.g. minutes read) or <em>at most</em> (e.g. cigarettes). Your daily values show up in the
+grid and in your insights.</p>
+
+<h3>How do streaks work?</h3>
+<p>A streak counts consecutive completions of a habit. Your <strong>current streak</strong> is your
+run right now; your <strong>longest streak</strong> is your best ever. Miss a scheduled day and the
+current streak resets — unless you're in Holiday Mode.</p>
+
+<h3>What is Holiday Mode?</h3>
+<p>Going away? In <strong>Settings → Holiday Mode</strong> (a Pro feature) you set a date range.
+During those dates your habit streaks are frozen — a missed day won't reset your progress — and
+habit reminders are paused. Your streak picks up right where it left off when you're back.
+Task reminders keep firing.</p>
+
+<h3>What do the symbols in the habit grid mean?</h3>
+<p>Each habit row shows one cell per day. Here's the whole language:</p>
+<table class="sym">
+  <tr><th>Symbol</th><th>Meaning</th></tr>
+  <tr><td class="s" style="color:#00658F">&#10003;</td>
+      <td><strong>Done</strong> — you completed the habit that day. This is what builds your streak.</td></tr>
+  <tr><td class="s" style="color:#b00020">&#10007;</td>
+      <td><strong>Missed</strong> — you marked the day as not done. A miss breaks the current streak
+          (unless the day falls inside Holiday Mode).</td></tr>
+  <tr><td class="s" style="color:#AB2F74">?</td>
+      <td><strong>Due</strong> — the habit was scheduled for that day and hasn't been logged yet.
+          It's a nudge, not a failure. <em>This marker only appears if you switch on
+          <strong>Settings → Show due-day markers</strong>.</em></td></tr>
+  <tr><td class="s" style="color:#9aa0a6">&ndash;</td>
+      <td><strong>Nothing logged</strong> — either the habit wasn't scheduled that day, or the day is
+          simply blank.</td></tr>
+  <tr><td class="s" style="color:#00658F">34</td>
+      <td><strong>A number</strong> — for measurable habits, the value you logged that day (34 minutes,
+          8 glasses, and so on) instead of a tick.</td></tr>
+</table>
+<p><strong>Tap any day to change it.</strong> Tapping cycles through: nothing &rarr; Done &rarr;
+Missed &rarr; nothing. For measurable habits, tapping lets you type the value.</p>
+
+<h3>Can I edit a past day?</h3>
+<p>Yes. Open the habit's grid (or its Insights) and tap any day to change it. Forgot to log
+yesterday? Just tap it.</p>
+
+<h2 id="tasks">Tasks</h2>
+
+<h3>What can a task have?</h3>
+<p>A priority (High / Medium / Low), a category, a due date, a reminder, notes, and subtasks to
+break bigger work into steps.</p>
+
+<h3>What are subtasks?</h3>
+<p>Subtasks break a bigger task into steps, so "Plan the trip" becomes a checklist instead of one
+intimidating line.</p>
+<ul>
+  <li><strong>Adding them:</strong> add subtasks while creating a task, or tap any task to open it
+      and add them later.</li>
+  <li><strong>Tracking progress:</strong> the task row shows a checklist chip like
+      <code>1/3</code> — how many subtasks are done out of the total — so you can see progress
+      without opening the task.</li>
+  <li><strong>Ticking off:</strong> open the task and check each subtask as you finish it.</li>
+  <li><strong>A helpful guard:</strong> if you complete a task that still has open subtasks, Intentt
+      asks whether they're really all done — and offers to take you back to review them, so nothing
+      gets closed by accident.</li>
+</ul>
+
+<h3>Can I turn something from another app into a task?</h3>
+<p>Yes. Select text anywhere on your phone, tap <strong>Share</strong>, and choose Intentt — it
+becomes a pre-filled new task.</p>
+
+<h3>What's the calendar strip at the top?</h3>
+<p>It shows your week at a glance, with a dot on days that have something due. Tap any date to see
+just that day's tasks and habits.</p>
+
+<h2 id="focus">Focus timer</h2>
+
+<h3>How does the focus timer work?</h3>
+<p>It's a Pomodoro-style timer: a focus block, then a break, repeating. Choose <strong>Classic</strong>
+(25/5), <strong>Short</strong> (15/3), or set your own Custom lengths.</p>
+
+<h3>What is Focus Mode?</h3>
+<p>A toggle that silences notifications while you focus (priority calls still come through), and
+restores your normal settings the moment you stop. It needs Do Not Disturb access, which Android
+will ask you to grant once.</p>
+
+<h3>What are focus sounds?</h3>
+<p>Optional ambient audio — Rain, Wind, Static or Deep — that loops while you focus, to mask
+distractions. It plays only during focus blocks and pauses on breaks.</p>
+
+<h3>Can I link a session to a task or habit?</h3>
+<p>Yes — start a focus session from a task or habit (the ▶ button) and the time is attributed to it,
+so your insights show where your time actually went.</p>
+
+<h2 id="reminders">Reminders &amp; notifications</h2>
+
+<h3 style="color:#b00020">My reminders aren't showing up — how do I fix it?</h3>
+<p>This is almost always your phone's battery saver stopping the app in the background, not a bug in
+Intentt. Android manufacturers are aggressive about this. Fix it once and it stays fixed:</p>
+<div class="tip">
+<p><strong>1. Allow notifications</strong> — Settings → Apps → Intentt → Notifications → allow.</p>
+<p><strong>2. Turn off battery optimisation</strong> — Settings → Apps → Intentt → Battery →
+choose <em>Unrestricted</em> / <em>Don't optimise</em>.</p>
+<p><strong>3. Enable Auto-start</strong> (this is the big one on Xiaomi/Redmi/POCO, Realme, OPPO,
+vivo, OnePlus) — find "Auto-start", "Autolaunch" or "Startup manager" in your phone's settings or
+Security app and enable it for Intentt. Without this, your phone can block reminders after a
+reboot.</p>
+<p><strong>4. Lock the app in Recents</strong> — open Recent apps, and lock/pin Intentt so the
+system won't kill it.</p>
+</div>
+<p>Exact menu names vary by phone brand and Android version — search your Settings for
+"auto-start" or "battery" if you can't find them.</p>
+
+<h3>Why do reminders need "Alarms &amp; reminders" permission?</h3>
+<p>So a reminder fires at the exact minute you set. Without exact alarms, Android may delay a
+reminder by many minutes, which defeats the point.</p>
+
+<h3>Can I make reminders stay until I act on them?</h3>
+<p>Yes — <strong>Settings → Notifications → Persistent reminders</strong>. They then won't disappear
+from swiping or "Clear all".</p>
+
+<h2 id="pro">Intentt Pro</h2>
+
+<h3>What do I get with Pro?</h3>
+<p>Full habit capacity, premium themes, advanced insights (trends, rankings, best days, focus
+breakdowns) and Holiday Mode.</p>
+
+<h3>Is Pro a subscription?</h3>
+<p>No. Intentt Pro is a <strong>one-time purchase</strong>. Buy it once, keep it.</p>
+
+<h3>I bought Pro but it's not showing / I changed phones</h3>
+<p>Go to <strong>Settings → Premium → Restore purchase</strong>. As long as you're signed into the
+same Google account that made the purchase, Pro will come back. Make sure you're online.</p>
+
+<h3>How do refunds work?</h3>
+<p>Purchases are handled by Google Play, so refunds follow the
+<a href="https://support.google.com/googleplay/answer/2479637">Google Play refund policy</a>.</p>
+
+<h2 id="data">Your data, backup &amp; privacy</h2>
+
+<h3>Where is my data stored?</h3>
+<p>Only on your device. Intentt collects nothing, sends nothing, and has no servers. See the
+<a href="privacy.html">Privacy Policy</a>.</p>
+
+<h3>How do I back up or move to a new phone?</h3>
+<p><strong>Settings → Backup</strong> → <em>Export</em> writes a backup file wherever you choose
+(Drive, Downloads, etc.). On the new phone, install Intentt and use <em>Restore</em> and pick that
+file.</p>
+<div class="tip">Restoring <strong>replaces</strong> all current tasks and habits in the app — so
+export first if you have data you want to keep.</div>
+
+<h3>How do I delete my data?</h3>
+<p>Delete individual items in the app, or uninstall Intentt to remove everything from your device.
+Since nothing is stored on any server, there's nothing left behind.</p>
+
+<h2 id="contact">Still stuck?</h2>
+<p>Email <a href="mailto:siddheshkarekar1@gmail.com">siddheshkarekar1@gmail.com</a> — tell us your
+phone model, Android version and what you expected to happen. You can also use
+<strong>Settings → Send feedback</strong>, which pre-fills the address for you.</p>
+
+<p class="sub" style="margin-top:3em">Last updated: 17 July 2026</p>
+</body>
+</html>
