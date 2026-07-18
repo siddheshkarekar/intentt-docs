@@ -176,9 +176,24 @@ system won't kill it.</p>
 <p>Exact menu names vary by phone brand and Android version — search your Settings for
 "auto-start" or "battery" if you can't find them.</p>
 
-<h3>Why do reminders need "Alarms &amp; reminders" permission?</h3>
-<p>So a reminder fires at the exact minute you set. Without exact alarms, Android may delay a
-reminder by many minutes, which defeats the point.</p>
+<h3 style="color:#b00020">My reminders arrive late (Android 14, 15 or 16)</h3>
+<p>Newer Android versions do <strong>not</strong> grant the "Alarms &amp; reminders" permission
+automatically. Without it, Android is allowed to batch and delay your reminders — often by
+several minutes, and while your phone is idle overnight it can be much longer. Nothing is broken;
+the reminders just stop being punctual.</p>
+<div class="tip">
+<p><strong>The one-tap fix:</strong> open <strong>Intentt → Settings</strong>. If you see
+<em>"Exact reminders are off"</em>, tap <strong>Turn on</strong> — it takes you straight to the
+right system screen. Switch on <strong>Allow setting alarms and reminders</strong> and you're done.</p>
+<p><strong>To find it manually:</strong> Settings → Apps → Intentt → <strong>Alarms &amp; reminders</strong>
+(on some phones: Settings → Apps → Special app access → Alarms &amp; reminders → Intentt).</p>
+</div>
+<p>If Intentt's Settings screen doesn't show that message, the permission is already granted —
+nothing to do. (Android 12 and 13 grant it automatically.)</p>
+
+<h3>Why does Intentt need "Alarms &amp; reminders" at all?</h3>
+<p>So a reminder fires at the exact minute you set it for. It's used only to schedule the reminders
+you create — nothing else.
 
 <h3>Can I make reminders stay until I act on them?</h3>
 <p>Yes — <strong>Settings → Notifications → Persistent reminders</strong>. They then won't disappear
