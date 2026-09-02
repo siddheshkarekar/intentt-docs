@@ -199,6 +199,55 @@ you create — nothing else.
 <p>Yes — <strong>Settings → Notifications → Persistent reminders</strong>. They then won't disappear
 from swiping or "Clear all".</p>
 
+<h3>What are alarm-style reminders?</h3>
+<p>A normal reminder arrives as a notification and waits quietly. An <strong>alarm-style</strong>
+reminder behaves like an alarm clock instead: it rings continuously, vibrates, and opens a
+full-screen page over your lock screen with <em>Done</em>, <em>Snooze</em> and <em>Dismiss</em>
+buttons. It keeps ringing until you act on it, or for one minute if you don't.</p>
+<p>They're for the handful of things you genuinely cannot miss &mdash; medication, picking someone
+up, a call you can't be late for. Everything else is better as a normal reminder.</p>
+<p><strong>They're off by default.</strong> Turn them on in
+<strong>Settings &rarr; Notifications &rarr; Alarm-style reminders</strong>.</p>
+
+<h3 style="color:#b00020">My alarm rings but doesn't open over the lock screen</h3>
+<p>Your phone is blocking it. This is a manufacturer restriction, not a bug in Intentt &mdash;
+several Android skins refuse to let any app open a screen over the lock screen until you allow it
+specifically, and it's switched off by default.</p>
+<div class="tip">
+<p><strong>The one-tap fix:</strong> open Intentt &rarr; <strong>Settings</strong>. If you see
+<em>"Alarm screen was blocked"</em>, tap <strong>Fix</strong> &mdash; it takes you straight to the
+right system screen. Turn on <strong>Show on Lock screen</strong> and you're done.</p>
+<p><strong>To find it manually</strong> &mdash; Settings &rarr; Apps &rarr; Manage apps &rarr;
+Intentt &rarr; <em>Other permissions</em> &rarr; <strong>Show on Lock screen</strong>. The wording
+varies by manufacturer; on some phones it sits under "Display over other apps" or "Special app
+access".</p>
+</div>
+<p>Intentt tells you when this happens: you'll get a notification saying the alarm couldn't open,
+and a red dot appears on the Settings icon until it's fixed. Once an alarm successfully takes over
+the screen, the warning disappears on its own and won't come back.</p>
+<p>Until you allow it, the reminder still rings and still shows a notification &mdash; you just
+don't get the full-screen page.</p>
+
+<h3>Why do I see two notifications when an alarm rings?</h3>
+<p>That's expected. One is the reminder itself, with its <em>Done</em>, <em>Snooze</em> and
+<em>Missed</em> buttons &mdash; it stays in your notifications afterwards so you can still act on
+it. The other says <strong>Alarm ringing</strong> and only exists while the sound is playing; it
+disappears the moment you dismiss or act on the alarm. Tapping either one opens the alarm
+screen.</p>
+
+<h3>Will an alarm-style reminder wake my phone at night?</h3>
+<p>Yes &mdash; that's the point of it. It turns the screen on, rings at alarm volume and ignores
+silent mode, exactly as a clock alarm does. If that's more than you want for a particular reminder,
+use a normal reminder instead, or use <strong>Holiday Mode</strong> to pause habit reminders while
+you're away.</p>
+<p>An unanswered alarm stops itself after one minute so it can't ring indefinitely, and the
+notification is left behind so you can see what you slept through.</p>
+
+<h3>Does "Dismiss" delete the reminder?</h3>
+<p>No. <strong>Dismiss</strong> only stops the noise &mdash; the reminder stays in your
+notifications with its buttons, so you can still mark it done later. Use <em>Done</em> (or
+<em>Missed</em>, for habits) when you've actually dealt with it.</p>
+
 <h3>What is the daily summary ("Today at a glance")?</h3>
 <p>Once a day, Intentt sends you a single notification titled <strong>"Today at a glance"</strong>
 telling you what's actually on your plate — for example <em>"2 tasks and 3 habits to tackle today."</em>
