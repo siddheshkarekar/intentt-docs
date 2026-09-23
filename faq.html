@@ -7,7 +7,8 @@
 <title>Intentt — Help &amp; FAQ</title>
 <style>
   body { font-family: -apple-system, "Segoe UI", Roboto, sans-serif; max-width: 780px;
-         margin: 0 auto; padding: 32px 20px 64px; line-height: 1.65; color: #222; }
+         margin: 0 auto; padding: 32px 20px 64px; line-height: 1.65; color: #222;
+         overflow-wrap: break-word; }
   h1 { font-size: 1.7em; margin-bottom: .2em; }
   h2 { font-size: 1.25em; margin-top: 2em; border-bottom: 1px solid #e3e3e3; padding-bottom: 6px; }
   h3 { font-size: 1.02em; margin-top: 1.5em; }
@@ -35,7 +36,8 @@
   .nav { margin: 0 0 1.2em; font-size: .95em; }
   .foot { color: #666; font-size: .95em; margin-top: 3em; }
   .nav a, .foot a { color: #00658F; text-decoration: none; }
-  .foot a { white-space: nowrap; }  /* wrap between links, never inside one */
+  .foot a { white-space: nowrap; }        /* never split a link name ... */
+  .foot .sep { padding: 0 .3em; }         /* ... but DO wrap at the separators */
   .nav a:hover, .foot a:hover { text-decoration: underline; }
   /* Back to top: hidden until you're a screen or so down (see the script at the end of the
      page). With JavaScript off it simply never appears, which costs nothing. */
@@ -391,7 +393,7 @@ Since nothing is stored on any server, there's nothing left behind.</p>
 phone model, Android version and what you expected to happen. You can also use
 <strong>Settings → Send feedback</strong>, which pre-fills the address for you.</p>
 
-<p class="foot"><a href="index.html">Home</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="privacy.html">Privacy Policy</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="terms.html">Terms of Use</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="licenses.html">Open-source Licenses</a></p>
+<p class="foot"><a href="index.html">Home</a> <span class="sep">·</span> <a href="privacy.html">Privacy Policy</a> <span class="sep">·</span> <a href="terms.html">Terms of Use</a> <span class="sep">·</span> <a href="licenses.html">Open-source Licenses</a></p>
 
 <a href="#" class="totop" id="totop" aria-label="Back to top">&uarr;</a>
 <script>
