@@ -22,17 +22,37 @@
   table.sym td.s { font-size: 1.25em; text-align: center; width: 62px; font-weight: 600; }
   a { color: #00658F; }
   @media (prefers-color-scheme: dark) {
+    .totop { background: #8DCDFF; color: #10141a; }
+
+    .foot { color: #9aa0a6; } .nav a, .foot a { color: #8DCDFF; }
     body { background: #16181c; color: #e6e6e6; }
     h2 { border-color: #2e3238; } .sub { color: #9aa0a6; }
     .tip { background: #1d2733; border-color: #8DCDFF; }
     code { background: #2a2d33; } a { color: #8DCDFF; }
     table.sym th { background: #22262c; } table.sym th, table.sym td { border-color: #2e3238; }
   }
+  /* Shared nav: every page can get back home, and to its siblings, in one tap. */
+  .nav { margin: 0 0 1.2em; font-size: .95em; }
+  .foot { color: #666; font-size: .95em; margin-top: 3em; }
+  .nav a, .foot a { color: #00658F; text-decoration: none; }
+  .foot a { white-space: nowrap; }  /* wrap between links, never inside one */
+  .nav a:hover, .foot a:hover { text-decoration: underline; }
+  /* Back to top: hidden until you're a screen or so down (see the script at the end of the
+     page). With JavaScript off it simply never appears, which costs nothing. */
+  .totop { position: fixed; right: 16px; bottom: 16px; width: 44px; height: 44px;
+           border-radius: 50%; display: flex; align-items: center; justify-content: center;
+           font-size: 1.25em; line-height: 1; text-decoration: none;
+           background: #00658F; color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.25);
+           opacity: 0; visibility: hidden; transition: opacity .2s, visibility .2s; }
+  .totop.show { opacity: .9; visibility: visible; }
+  .totop:hover, .totop:focus { opacity: 1; }
 </style>
 </head>
 <body>
+<p class="nav"><a href="index.html">← Intentt</a></p>
 <h1>Intentt — Help &amp; FAQ</h1>
-<p class="sub">Everything you need to get the most out of Intentt.</p>
+<p class="sub">Everything you need to get the most out of Intentt.<br>
+Last updated: 23 September 2026</p>
 
 <div class="toc">
   <a href="#basics">Getting started</a>
@@ -193,7 +213,33 @@ nothing to do. (Android 12 and 13 grant it automatically.)</p>
 
 <h3>Why does Intentt need "Alarms &amp; reminders" at all?</h3>
 <p>So a reminder fires at the exact minute you set it for. It's used only to schedule the reminders
-you create — nothing else.
+you create — nothing else.</p>
+
+<h3>When does a task reminder go off?</h3>
+<p><strong>Once</strong> — on the task's due date, at the time you set. It does not repeat.</p>
+<p>If the task is <em>still open the next day</em>, you get a single follow-up notification titled
+<strong>"Still pending"</strong>, with three buttons:</p>
+<ul>
+  <li><strong>Done</strong> — marks the task complete, there and then.</li>
+  <li><strong>Reschedule</strong> — opens the task so you can pick a new date; the reminder then
+      fires once on that date, and nothing in between.</li>
+  <li><strong>Stop reminding</strong> — clears the task's reminder time. The task itself stays; only
+      the reminder goes, and you can add a new one whenever you like.</li>
+</ul>
+<p>There is only ever <strong>one</strong> follow-up. Dismiss it and Intentt stays quiet.</p>
+<div class="tip">Habit reminders work differently: they follow the habit's own schedule — daily,
+weekly, "3 times a week", and so on — so they keep arriving as long as the habit is scheduled.</div>
+
+<h3>Why does a reminder need a due date?</h3>
+<p>Because the reminder rings <em>on</em> the due date — a time by itself has no day to ring on. If
+you set a reminder time on a task with no due date, Intentt fills one in for you: <strong>today</strong>
+if that time hasn't passed yet, otherwise <strong>tomorrow</strong>. Change it like any other due
+date. If a reminder can't ring as things stand, the task screen tells you so underneath the time.</p>
+
+<h3>I finished a task early — will it still remind me?</h3>
+<p>No. Completing a task cancels its reminder and its next-day follow-up, whether you tick it off in
+the app or from the notification itself. Un-tick it later and the reminder comes back. The same goes
+for habits: once you've logged a habit for the period, its reminder won't nag you again for it.</p>
 
 <h3>Can I make reminders stay until I act on them?</h3>
 <p>Yes — <strong>Settings → Notifications → Persistent reminders</strong>. They then won't disappear
@@ -247,6 +293,8 @@ notification is left behind so you can see what you slept through.</p>
 <p>No. <strong>Dismiss</strong> only stops the noise &mdash; the reminder stays in your
 notifications with its buttons, so you can still mark it done later. Use <em>Done</em> (or
 <em>Missed</em>, for habits) when you've actually dealt with it.</p>
+<p>For a task, dismissing doesn't cancel the one next-day follow-up either. If you want no further
+reminders at all, use <strong>Stop reminding</strong> on that follow-up.</p>
 
 <h3>What is the daily summary ("Today at a glance")?</h3>
 <p>Once a day, Intentt sends you a single notification titled <strong>"Today at a glance"</strong>
@@ -309,10 +357,30 @@ same Google account that made the purchase, Pro will come back. Make sure you're
 
 <h3>How do I back up or move to a new phone?</h3>
 <p><strong>Settings → Backup</strong> → <em>Export</em> writes a backup file wherever you choose
-(Drive, Downloads, etc.). On the new phone, install Intentt and use <em>Restore</em> and pick that
-file.</p>
+(Drive, Downloads, etc.). You'll be offered the chance to protect it with a password first — see
+below. On the new phone, install Intentt and use <em>Restore</em> and pick that file.</p>
 <div class="tip">Restoring <strong>replaces</strong> all current tasks and habits in the app — so
 export first if you have data you want to keep.</div>
+
+<h3>Can I password-protect my backup?</h3>
+<p>Yes. When you tap <em>Export</em>, Intentt asks <strong>"Protect this backup?"</strong> — type a
+password and choose <strong>Encrypt &amp; export</strong>, or choose <strong>Skip</strong> to save a
+plain file exactly as before. Encrypted backups are saved as <code>.intentt</code> files, plain ones
+as <code>.db</code>.</p>
+<p>This is worth doing if the backup is going somewhere other than your own phone — a cloud drive,
+a shared computer, or a chat message. A plain backup is an ordinary database file: anything that can
+read the folder it sits in can read your tasks and habits. An encrypted one is unreadable without
+the password.</p>
+<p>Restoring works the same either way — pick the file and Intentt works out which kind it is. If
+it's encrypted you'll be asked for the password, and if you get it wrong nothing on your phone
+changes, so you can simply try again.</p>
+<div class="tip"><strong>There is no way to recover a forgotten password.</strong> It is never
+stored anywhere and never leaves your device, so a backup whose password is lost cannot be opened
+— not by you, and not by us. Keep it somewhere safe, such as a password manager.</div>
+<p>Encryption is <strong>AES-256-GCM</strong>, with the key derived from your password using
+<strong>PBKDF2-HMAC-SHA256</strong> (600,000 iterations) and a fresh random salt for every export.
+The file also carries a tamper check, so a corrupted or edited backup is refused rather than
+half-restored. Backups made before this feature existed still restore normally.</p>
 
 <h3>How do I delete my data?</h3>
 <p>Delete individual items in the app, or uninstall Intentt to remove everything from your device.
@@ -323,6 +391,28 @@ Since nothing is stored on any server, there's nothing left behind.</p>
 phone model, Android version and what you expected to happen. You can also use
 <strong>Settings → Send feedback</strong>, which pre-fills the address for you.</p>
 
-<p class="sub" style="margin-top:3em">Last updated: 03 September 2026</p>
+<p class="foot"><a href="index.html">Home</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="privacy.html">Privacy Policy</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="terms.html">Terms of Use</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="licenses.html">Open-source Licenses</a></p>
+
+<a href="#" class="totop" id="totop" aria-label="Back to top">&uarr;</a>
+<script>
+  // Show the button once the reader is past ~1.5 screens, and keep the jump smooth unless the
+  // reader has asked for reduced motion.
+  (function () {
+    var btn = document.getElementById('totop');
+    if (!btn) return;
+    var smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function sync() {
+      var y = window.pageYOffset || document.documentElement.scrollTop;
+      btn.classList.toggle('show', y > window.innerHeight * 1.5);
+    }
+    window.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: smooth ? 'smooth' : 'auto' });
+    });
+    sync();
+  })();
+</script>
 </body>
 </html>

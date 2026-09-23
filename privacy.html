@@ -11,18 +11,40 @@
   h1 { font-size: 1.7em; } h2 { font-size: 1.2em; margin-top: 1.8em; }
   code { background: #f2f2f2; padding: 1px 5px; border-radius: 4px; }
   .meta { color: #666; font-size: .95em; }
+  a { color: #00658F; }
   @media (prefers-color-scheme: dark) {
+    .totop { background: #8DCDFF; color: #10141a; }
+
+    .foot { color: #9aa0a6; } .nav a, .foot a { color: #8DCDFF; }
     body { background: #16181c; color: #e6e6e6; }
-    code { background: #2a2d33; } .meta { color: #9aa0a6; }
+    code { background: #2a2d33; } .meta { color: #9aa0a6; } a { color: #8DCDFF; }
   }
+  /* Shared nav: every page can get back home, and to its siblings, in one tap. */
+  .nav { margin: 0 0 1.2em; font-size: .95em; }
+  .foot { color: #666; font-size: .95em; margin-top: 3em; }
+  .nav a, .foot a { color: #00658F; text-decoration: none; }
+  .foot a { white-space: nowrap; }  /* wrap between links, never inside one */
+  .nav a:hover, .foot a:hover { text-decoration: underline; }
+  /* Back to top: hidden until you're a screen or so down (see the script at the end of the
+     page). With JavaScript off it simply never appears, which costs nothing. */
+  .totop { position: fixed; right: 16px; bottom: 16px; width: 44px; height: 44px;
+           border-radius: 50%; display: flex; align-items: center; justify-content: center;
+           font-size: 1.25em; line-height: 1; text-decoration: none;
+           background: #00658F; color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.25);
+           opacity: 0; visibility: hidden; transition: opacity .2s, visibility .2s; }
+  .totop.show { opacity: .9; visibility: visible; }
+  .totop:hover, .totop:focus { opacity: 1; }
 </style>
 </head>
 <body>
+<p class="nav"><a href="index.html">← Intentt</a></p>
 <h1>Privacy Policy — Intentt</h1>
 <p class="meta">App: <strong>Intentt</strong> (package <code>com.intentt</code>)<br>
-Effective date: 17 July 2026 · Last updated: 3 August 2026</p>
+Effective date: 17 July 2026 · Last updated: 23 September 2026</p>
 
-<p><strong>The short version: Intentt collects no data. Everything you enter stays on your device.</strong></p>
+<p><strong>The short version: Intentt collects no data and has no servers. Everything you enter
+stays on your device — the only copies that ever leave it are ones you make yourself, or the backup
+Android takes to your own Google account if you have that switched on. Nothing comes to us.</strong></p>
 
 <h2>1. Data we collect</h2>
 <p>None. Intentt does not collect, transmit, sell, or share any personal information or usage data.
@@ -33,14 +55,24 @@ fully offline.</p>
 <p>Your tasks, habits, notes, focus-session history, and settings are stored in a private database
 on your own device, accessible only to the app. They are never uploaded to us — we operate no
 servers and have no ability to see your data.</p>
+<p>Two things can copy that database off the device, and both are yours to control: a backup you
+export yourself, and Android's own system backup. Section 3 explains each.</p>
 
 <h2>3. Backups</h2>
 <ul>
   <li><strong>Your own exports:</strong> you can export a backup file from Settings to a location you
-      choose. That file is under your control.</li>
-  <li><strong>Android system backup:</strong> if you have Android's backup enabled, the system may
-      include Intentt's data in your device backup (encrypted by Android, tied to your Google
-      account, controlled entirely by your device settings). We never receive it.</li>
+      choose. That file is under your control, and it goes wherever you point it — including a cloud
+      drive, if that is what you pick. When you export, Intentt offers to <strong>protect the file
+      with a password</strong>: do that and the backup is encrypted (AES-256) and unreadable without
+      it. Skip the password and the file is a plain database that anything able to read that folder
+      can open. The password is never stored and never sent anywhere, so a forgotten one cannot be
+      recovered by us or by anyone else.</li>
+  <li><strong>Android system backup:</strong> Intentt allows Android's own backup, which is on for
+      most people by default. That means <strong>the database holding your tasks, habits and
+      settings is included in your device's backup to your Google account</strong>, and in a
+      phone-to-phone transfer when you set up a new device. Google encrypts it, it is tied to your
+      account rather than ours, and it is governed entirely by your Android backup settings — you
+      can turn it off there. <strong>We never receive it and cannot see it.</strong></li>
 </ul>
 
 <h2>4. Purchases</h2>
@@ -91,5 +123,29 @@ collection — where your permission is required, we will ask for it separately 
 
 <h2>9. Contact</h2>
 <p>Questions about privacy? Email <a href="mailto:siddheshkarekar1@gmail.com">siddheshkarekar1@gmail.com</a>.</p>
+
+<p class="foot"><a href="index.html">Home</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="faq.html">Help &amp; FAQ</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="terms.html">Terms of Use</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="licenses.html">Open-source Licenses</a></p>
+
+<a href="#" class="totop" id="totop" aria-label="Back to top">&uarr;</a>
+<script>
+  // Show the button once the reader is past ~1.5 screens, and keep the jump smooth unless the
+  // reader has asked for reduced motion.
+  (function () {
+    var btn = document.getElementById('totop');
+    if (!btn) return;
+    var smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function sync() {
+      var y = window.pageYOffset || document.documentElement.scrollTop;
+      btn.classList.toggle('show', y > window.innerHeight * 1.5);
+    }
+    window.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: smooth ? 'smooth' : 'auto' });
+    });
+    sync();
+  })();
+</script>
 </body>
 </html>
